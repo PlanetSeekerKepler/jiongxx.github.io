@@ -16,15 +16,20 @@ make
 
 ## git使用
 
+初始化仓库
+```git
+git init
+```
+
 添加远程连接信息。
 ```git
-git remote add https "本仓库HTTPS“
+git remote add https "https://github.com/PlanetSeekerKepler/jiongxx.github.io.git"
 ```
 
 将本地版本库上传至Github
 ```git
 git add
-git commit -m "更改信息"
+git commit -m "some info"
 ```
 
 将Github同步到本地版本库
