@@ -26,13 +26,22 @@ git init
 git remote add https "https://github.com/PlanetSeekerKepler/jiongxx.github.io.git"
 ```
 
-将本地版本库上传至Github
+将本地文件添加到缓存区
 ```git
-git add
-git commit -m "some info"
+git add {FILE NAME}
 ```
 
-将Github同步到本地版本库
+将缓存区提交到本地仓库，附更新备注
+```git
+git commit -m "Some info."
+```
+
+将本地仓库推送到github
+```git
+git push
+```
+
+将Github仓库拉取至本地工作区
 ```git
 git pull https main
 ```
