@@ -54,6 +54,11 @@ git add {FILE NAME}
 git commit -m "Some info."
 ```
 
+可将本地文件一次提交到本地仓库，附更新备注
+```git
+git commit -a -m "Some info."
+```
+
 将本地仓库推送到github
 ```git
 git push
