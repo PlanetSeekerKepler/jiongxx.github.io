@@ -34,26 +34,21 @@ typedef unsigned int uint32_t;
 
 typedef void (*PollCallback)(const void *);
 typedef void (*DisconnCallback)(const void *);
+typedef void (*ParseCallback)(const void *);
 
-typedef struct UARTDeviceList
-{
-	//QueueHandle_t t;
-	ModbusDev *dev;
-	UARTDevList *prev;
-	UARTDevList *next;
-}UARTDevList;
-
+/// @brief Modbus设备
 typedef struct ModbusDevice
 {
-	uint16_t addr;
-	char name[20];
-	uint16_t status;
-	uint16_t prd;
-	uint16_t timeout;
-	uint16_t conn;
-	uint16_t crcEnable;
-	PollCallback pollcb;
-	DisconnCallback disconncb;
+	uint16_t addr; //地址
+	char name[20]; //名称
+	uint16_t status; //状态 (启动/禁用/异常)
+	uint16_t prd; //最小采集周期
+	uint16_t timeout; //断连超时
+	uint16_t conn; //连接状态
+	uint16_t crcEnable; //启用CRC校验
+	PollCallback pollcb; //轮询函数
+	ParseCallback parsecb; //解析函数
+	DisconnCallback disconncb; //断连回调函数
 }ModbusDev;
 
 typedef struct ModbusTxMail

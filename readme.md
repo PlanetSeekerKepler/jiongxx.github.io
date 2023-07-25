@@ -2,15 +2,33 @@
 
 C语言见习
 
-## 进度
+## 项目
 
 - [x] 堆排序，Heap sort
 - [x] 优先队列，Priority queue
+- [ ] MODBUS-RTU服务
+- [x] Windows Hello界面，摘自[演练：创建传统的 Windows 桌面应用程序 (C++)](https://learn.microsoft.com/zh-cn/cpp/windows/walkthrough-creating-windows-desktop-applications-cpp?view=msvc-170)
+
+## IDE
+
+使用Visual Studio Code进行编辑，需要下载拓展C/C++和C/C++ Extension Pack。
 
 ## 编译
 
-已编写Makefile文件，可使用Makefile可编译，主要在WSL环境下进行编译。
+所有项目均使用gcc和g++编译，在Windows上需要下载[w64devkit](https://github.com/skeeto/w64devkit)。
+
+编译所有项目文件，生成对象文件`.o`
 ```c
+gcc -c *.c
+```
+
+将所有对象文件链接，生成可执行文件`.exe`
+```c
+gcc *.o -o {EXE_NAME}
+```
+
+部分项目编写了Makefile文件，可使用Makefile可编译。
+```Makefile
 make
 ```
 
